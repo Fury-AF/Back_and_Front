@@ -8,9 +8,9 @@ export default class DataService {
       .get(vegpont)
       .then(function (response) {
         // handle success
-        console.log(response);
-        console.log(response.data);
-        console.log(response.data);
+       // console.log(response);
+       // console.log(response.data);
+        //console.log(response.data);
         callback(response.data);
       })
       .catch(function (error) {
@@ -26,10 +26,10 @@ export default class DataService {
       .delete(vegpont + "/" + id)
       .then(function (response) {
         // handle success
-        console.log(response);
+        console.log(id);
+       // console.log(response.data);
+       // console.log(response.data);
         console.log(response.data);
-        console.log(response.data);
-        callback(response.data);
       })
       .catch(function (error) {
         // handle error

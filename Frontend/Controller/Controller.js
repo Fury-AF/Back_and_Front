@@ -5,11 +5,11 @@ export default class Controller {
   constructor() {
     this.dataService = new DataService();
     this.dataService.getData("investment", this.megjelenit);
-    $(window).on("deleteItem", (e) => {
+    $(window).on("deleteLine", (e) => {
 
     
-      //console.log("Controller-", e.details);
-      this.dataService.deleteData("investment", e.details, this.errorCallback);
+      console.log("Controller-", e);
+      this.dataService.deleteData("investment", e.detail, this.errorCallback);
     
     });
   }  errorCallback(error) {

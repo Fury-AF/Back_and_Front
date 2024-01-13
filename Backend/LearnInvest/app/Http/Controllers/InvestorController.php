@@ -18,10 +18,10 @@ class InvestorController extends Controller
      */
     public function store(Request $request)
     {
-        $airline = new Investor();
-        $airline->name = $request->input('name');
-        $airline->email = $request->input('email');
-        $airline->save();
+        $investor = new Investor();
+        $investor->name = $request->input('name');
+        $investor->email = $request->input('email');
+        $investor->save();
     }
 
     /**
@@ -37,10 +37,10 @@ class InvestorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $airline = Investor::findOrFail($id);
-        $airline->investor_id = $request->input('investor_id');
-        $airline->name = $request->input('email');
-        $airline->save();
+        $investor = Investor::findOrFail($id);
+        $investor->investor_id = $request->input('investor_id');
+        $investor->name = $request->input('email');
+        $investor->save();
     }
 
     /**
@@ -48,5 +48,5 @@ class InvestorController extends Controller
      */
     public function destroy($id)
     {
-        $airline = Investor::findOrFail($id)->delete();
+        $investor = Investor::findOrFail($id)->delete();
     }}

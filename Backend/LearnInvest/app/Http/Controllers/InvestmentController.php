@@ -19,11 +19,11 @@ class InvestmentController extends Controller
      */
     public function store(Request $request)
     {
-        $airline = new Investment();
-        $airline->investor_id = $request->input('investor_id');
-        $airline->investment_name = $request->input('investment_name');
-        $airline->amount = $request->input('amount');
-        $airline->save();
+        $investment = new Investment();
+        $investment->investor_id = $request->input('investor_id');
+        $investment->investment_name = $request->input('investment_name');
+        $investment->amount = $request->input('amount');
+        $investment->save();
     }
 
     /**
@@ -39,11 +39,11 @@ class InvestmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $airline = Investment::findOrFail($id);
-        $airline->investor_id = $request->input('investor_id');
-        $airline->investment_name = $request->input('investment_name');
-        $airline->amount = $request->input('amount');
-        $airline->save();
+        $investment = Investment::findOrFail($id);
+        $investment->investor_id = $request->input('investor_id');
+        $investment->investment_name = $request->input('investment_name');
+        $investment->amount = $request->input('amount');
+        $investment->save();
     }
 
     /**
@@ -51,7 +51,7 @@ class InvestmentController extends Controller
      */
     public function destroy($id)
     {
-        $airline = Investment::findOrFail($id)->delete();
+        $investment = Investment::findOrFail($id)->delete();
     }
 
 }

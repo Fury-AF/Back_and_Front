@@ -12,14 +12,15 @@ export default class LineView {
 
     this.deleteItem = this.parentItem.find(".torles:last");
     this.deleteItem.on("click", () => {
-      //console.log("LineView-törles");
+     // console.log("LineView-törles");
       this.trigger("deleteLine");
     });
   }
 
   trigger(e) {
-    const esemeny = new CustomEvent(e, { detail: this.id });
+    const esemeny = new CustomEvent(e, { detail: this.#obj.id });
     window.dispatchEvent(esemeny);
+   console.log("LineView :",esemeny,this.#obj.id )
   }
   htmlBuilder() {
     let txt = "<tr>";
